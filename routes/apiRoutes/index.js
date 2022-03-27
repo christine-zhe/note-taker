@@ -4,8 +4,8 @@ const fs = require('fs');
 const path = require('path');
 let allNotes = require("../../db/db.json");
 
+//ID prints out unique values
 const { v4: uuidv4 } = require('uuid');
-
 
 router.post("/notes", (req, res) => {
   const note = req.body;
@@ -34,7 +34,6 @@ function writeNote(note) {
     JSON.stringify(allNotes, null, 2),
     () => {
       console.log("Notes captured!");
-
     }
 
   )
